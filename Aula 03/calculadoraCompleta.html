@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="../Aula 03/style.css" />
+  </head>
+
+  <body>
+    <h1><a href="calculadoraCompleta.html">Calculadora</a></h1>
+
+    <form action="aula03.php" method="GET">
+        <div id="inputContainer1">
+            <input type="text" name="a" />
+        </div>
+        <div id="inputContainer2">
+            <input type="text" name="b" />
+        </div>
+        <select name="tipo" id="operacao" onchange="mostrarInputs()">
+        <option value="soma">Soma</option>
+        <option value="subtração">Subtração</option>
+        <option value="divisão">Divisão</option>
+        <option value="multiplicação">Multiplicação</option>
+        <option value="raiz">Raiz Quadrada</option>
+        <option value="sin">Seno</option>
+        <option value="cos">Cosseno</option>
+        <option value="tan">Tangente</option>
+        <option value="troca">Troca de Sinais</option>
+      </select>
+      <input type="submit" value="Enviar" />
+    </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
