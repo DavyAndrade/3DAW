@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <h1>Criar Nova Disciplina</h1>
-        <form action="incluirDisciplinas.php" method="POST">
+        <form action="criarDisciplinas.php" method="POST">
             Nome: <input type="text" name="nome">
             <br><br>
             Sigla: <input type="text" name="sigla">

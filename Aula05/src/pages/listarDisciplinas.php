@@ -26,7 +26,7 @@ if (file_exists("disciplinas.txt")) {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="incluirDisciplinas.php">Incluir Disciplinas</a></li>
+                <li><a href="criarDisciplinas.php">Incluir Disciplinas</a></li>
                 <li><a href="alterarDisciplinas.php">Alterar Disciplinas</a></li>
                 <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
             </ul>

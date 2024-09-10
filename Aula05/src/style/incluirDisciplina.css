@@ -59,6 +59,7 @@ nav {
   color: black;
   flex-direction: row;
   display: flex;
+  justify-content: center;
 }
 
 li {

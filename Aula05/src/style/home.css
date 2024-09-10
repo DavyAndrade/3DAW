@@ -20,9 +20,16 @@ nav {
   color: black;
   flex-direction: row;
   display: flex;
+  justify-content: center;
 }
 
 li {
   margin: 1rem;
   font-weight: bold;
+}
+
+h1, p {
+  color: white !important;
+  text-align: center;
+  margin-top: 5rem;
 }

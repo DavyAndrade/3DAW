@@ -13,6 +13,8 @@ main {
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -31,6 +33,7 @@ nav {
   color: black;
   flex-direction: row;
   display: flex;
+  justify-content: center;
 }
 
 nav li {
