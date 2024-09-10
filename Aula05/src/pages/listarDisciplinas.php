@@ -16,7 +16,7 @@ if (file_exists("disciplinas.txt")) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Disciplinas</title>
+    <title>Lista de Disciplinas</title>
     <link rel="stylesheet" href="../style/listarDisciplinas.css">
 </head>
 
@@ -26,8 +26,7 @@ if (file_exists("disciplinas.txt")) {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="criarDisciplinas.php">Incluir Disciplinas</a></li>
-                <li><a href="alterarDisciplinas.php">Alterar Disciplinas</a></li>
+                <li><a href="criarDisciplina.php">Incluir Disciplinas</a></li>
                 <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
             </ul>
         </nav>
@@ -35,11 +34,36 @@ if (file_exists("disciplinas.txt")) {
 
     <main>
         <h2>Lista de Disciplinas</h2>
-        <ul>
-            <?php foreach ($disciplinas as $disciplina): ?>
-                <li><?php echo "Nome: " . "$disciplina[0]" . " | Sigla: " . $disciplina[1] . " | Carga Horária: " . $disciplina[2]; ?></li>
-            <?php endforeach; ?>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sigla</th>
+                    <th>Carga Horária</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (count($disciplinas) > 0): ?>
+                    <?php foreach ($disciplinas as $index => $disciplina): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($disciplina[0]); ?></td>
+                            <td><?php echo htmlspecialchars($disciplina[1]); ?></td>
+                            <td><?php echo htmlspecialchars($disciplina[2]); ?></td>
+                            <td>
+                                <!-- Botões de Editar e Deletar -->
+                                <a href="alterarDisciplina.php?id=<?php echo $index; ?>">Editar</a> |
+                                <a href="deletarDisciplina.php?id=<?php echo $index; ?>" onclick="return confirm('Tem certeza que deseja deletar essa disciplina?')">Deletar</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4">Nenhuma disciplina cadastrada</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </main>
 </body>
 

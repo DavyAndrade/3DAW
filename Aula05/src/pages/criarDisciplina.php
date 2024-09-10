@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sigla = $_POST["sigla"];
     $carga = $_POST["carga"];
 
-    $arqDisc = fopen(__DIR__ . "/disciplinas.txt", "a") or die("erro ao criar arquivo");
+    $arqDisc = fopen("disciplinas.txt", "a") or die("erro ao criar arquivo");
 
     $linha = $nome . ";" . $sigla . ";" . $carga . "\n";
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incluir Disciplinas</title>
+    <title>Criar Disciplinas</title>
     <link rel="stylesheet" href="../style/incluirDisciplina.css">
 </head>
 
@@ -30,8 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="incluirDisciplinas.php">Incluir Disciplinas</a></li>
-                <li><a href="alterarDisciplinas.php">Alterar Disciplinas</a></li>
+                <li><a href="criarDisciplina.php">Incluir Disciplinas</a></li>
                 <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
             </ul>
         </nav>
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <h1>Criar Nova Disciplina</h1>
-        <form action="criarDisciplinas.php" method="POST">
+        <form action="criarDisciplina.php" method="POST">
             Nome: <input type="text" name="nome">
             <br><br>
             Sigla: <input type="text" name="sigla">
