@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background-color: black !important;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  flex-direction: row;
+  display: flex;
+}
+
+li {
+  margin: 1rem;
+  font-weight: bold;
+}

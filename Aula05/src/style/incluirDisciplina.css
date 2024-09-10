@@ -12,17 +12,7 @@ body {
   text-align: center;
 }
 
-.lista-container {
-  background-color: white;
-  text-align: center;
-  border-radius: 3rem;
-  text-decoration: none;
-  margin: 5rem;
-  padding: 2rem;
-}
-
 form {
-    width: 1000px;
     justify-content: center;
 }
 
@@ -42,7 +32,7 @@ input[type="submit"] {
 }
 
 input[type="text"] {
-  background-color: gray;
+  background-color: rgb(110, 110, 110);
   opacity: 75%;
   border: 1px solid black;
   border-radius: 5px;
