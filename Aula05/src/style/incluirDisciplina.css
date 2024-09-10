@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-.form-container {
+main {
   background-color: white;
   border-radius: 3rem;
   margin: 5rem;
@@ -41,4 +41,27 @@ input[type="text"] {
   text-decoration: none;
   margin: 4px 2px;
   width: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  flex-direction: row;
+  display: flex;
+}
+
+li {
+  margin: 1rem;
+  font-weight: bold;
 }

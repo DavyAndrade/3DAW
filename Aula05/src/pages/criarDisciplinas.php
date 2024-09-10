@@ -1,19 +1,15 @@
 <?php
 $msg = "";
 
-// Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST["nome"];
     $sigla = $_POST["sigla"];
     $carga = $_POST["carga"];
 
-    // Abre o arquivo disciplinas.txt para adicionar a nova disciplina
-    $arqDisc = fopen("disciplinas.txt", "a") or die("erro ao criar arquivo");
+    $arqDisc = fopen(__DIR__ . "/disciplinas.txt", "a") or die("erro ao criar arquivo");
 
-    // Cria a linha com os dados da nova disciplina
     $linha = $nome . ";" . $sigla . ";" . $carga . "\n";
 
-    // Escreve a linha no arquivo e fecha o arquivo
     fwrite($arqDisc, $linha);
     fclose($arqDisc);
 }
@@ -30,7 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="form-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="incluirDisciplinas.php">Incluir Disciplinas</a></li>
+                <li><a href="alterarDisciplinas.php">Alterar Disciplinas</a></li>
+                <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
         <h1>Criar Nova Disciplina</h1>
         <form action="incluirDisciplinas.php" method="POST">
             Nome: <input type="text" name="nome">
@@ -41,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br><br>
             <input type="submit" value="Criar Nova Disciplina">
         </form>
-    </div>
+    </main>
 </body>
 
 </html>

@@ -4,6 +4,17 @@ body {
   margin: 0;
 }
 
+main {
+  background-color: white;
+  text-align: center;
+  border-radius: 3rem;
+  text-decoration: none;
+  margin: 5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -22,7 +33,7 @@ nav {
   display: flex;
 }
 
-li {
+nav li {
   margin: 1rem;
   font-weight: bold;
 }
