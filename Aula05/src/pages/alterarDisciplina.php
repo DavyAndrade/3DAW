@@ -9,7 +9,7 @@ if (file_exists("disciplinas.txt")) {
     fclose($arqDisc);
 }
 
-$id = $_GET['id'] ?? -1;
+$id = $_GET['id'];
 if ($id == -1 || !isset($disciplinas[$id])) {
     die("Disciplina não encontrada");
 }
@@ -52,8 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="criarDisciplina.php">Incluir Disciplinas</a></li>
+                <li><a href="criarDisciplina.php">Criar Disciplinas</a></li>
                 <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
+                <li><a href="buscarDisciplina.php">Buscar Disciplina</a></li>
             </ul>
         </nav>
     </header>

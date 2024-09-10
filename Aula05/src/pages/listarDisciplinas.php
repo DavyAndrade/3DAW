@@ -26,8 +26,9 @@ if (file_exists("disciplinas.txt")) {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="criarDisciplina.php">Incluir Disciplinas</a></li>
+                <li><a href="criarDisciplina.php">Criar Disciplinas</a></li>
                 <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
+                <li><a href="buscarDisciplina.php">Buscar Disciplina</a></li>
             </ul>
         </nav>
     </header>
@@ -47,11 +48,10 @@ if (file_exists("disciplinas.txt")) {
                 <?php if (count($disciplinas) > 0): ?>
                     <?php foreach ($disciplinas as $index => $disciplina): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($disciplina[0]); ?></td>
-                            <td><?php echo htmlspecialchars($disciplina[1]); ?></td>
-                            <td><?php echo htmlspecialchars($disciplina[2]); ?></td>
+                            <td><?php echo "$disciplina[0]"; ?></td>
+                            <td><?php echo "$disciplina[1]"; ?></td>
+                            <td><?php echo "$disciplina[2]"; ?></td>
                             <td>
-                                <!-- Botões de Editar e Deletar -->
                                 <a href="alterarDisciplina.php?id=<?php echo $index; ?>">Editar</a> |
                                 <a href="deletarDisciplina.php?id=<?php echo $index; ?>" onclick="return confirm('Tem certeza que deseja deletar essa disciplina?')">Deletar</a>
                             </td>

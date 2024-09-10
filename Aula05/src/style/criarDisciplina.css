@@ -21,7 +21,7 @@ ul {
 }
 
 input[type="submit"] {
-  background-color: #042eaa;
+  background-color: #4A90E2;
   border: none;
   border-radius: 10px;
   color: white;
@@ -32,7 +32,7 @@ input[type="submit"] {
 }
 
 input[type="text"] {
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(0, 0, 0);
   opacity: 75%;
   border: 1px solid black;
   border-radius: 5px;
