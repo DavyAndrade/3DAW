@@ -1,10 +1,10 @@
 <?php
 
-$disciplinas = [];
-if (file_exists("disciplinas.txt")) {
-    $arqDisc = fopen("disciplinas.txt", "r") or die("erro ao abrir arquivo");
+$alunos = [];
+if (file_exists("alunos.txt")) {
+    $arqDisc = fopen("alunos.txt", "r") or die("erro ao abrir arquivo");
     while (($linha = fgets($arqDisc)) !== false) {
-        $disciplinas[] = explode(";", trim($linha));
+        $alunos[] = explode(";", trim($linha));
     }
     fclose($arqDisc);
 }
@@ -16,8 +16,8 @@ if (file_exists("disciplinas.txt")) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Disciplinas</title>
-    <link rel="stylesheet" href="../style/listarDisciplinas.css">
+    <title>Lista de Alunos</title>
+    <link rel="stylesheet" href="../style/listarAlunos.css">
 </head>
 
 <body>
@@ -26,9 +26,9 @@ if (file_exists("disciplinas.txt")) {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="criarDisciplina.php">Criar Disciplinas</a></li>
-                <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
-                <li><a href="buscarDisciplina.php">Buscar Disciplina</a></li>
+                <li><a href="cadastrarAluno.php">Cadastrar Aluno</a></li>
+                <li><a href="listarAlunos.php">Lista de Alunos</a></li>
+                <li><a href="buscarAluno.php">Busca de Aluno</a></li>
             </ul>
         </nav>
     </header>
@@ -39,18 +39,22 @@ if (file_exists("disciplinas.txt")) {
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Sigla</th>
-                    <th>Carga Horária</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                    <th>Matricula</th>
+                    <th>Ano de Ingresso</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <?php if (count($disciplinas) > 0): ?>
-                    <?php foreach ($disciplinas as $index => $disciplina): ?>
+                <?php if (count($alunos) > 0): ?>
+                    <?php foreach ($alunos as $index => $aluno): ?>
                         <tr>
-                            <td><?php echo "$disciplina[0]"; ?></td>
-                            <td><?php echo "$disciplina[1]"; ?></td>
-                            <td><?php echo "$disciplina[2]"; ?></td>
+                            <td><?php echo "$aluno[0]"; ?></td>
+                            <td><?php echo "$aluno[1]"; ?></td>
+                            <td><?php echo "$aluno[2]"; ?></td>
+                            <td><?php echo "$aluno[3]"; ?></td>
+                            <td><?php echo "$aluno[4]"; ?></td>
                             <td>
                                 <a href="alterarDisciplina.php?id=<?php echo $index; ?>">Editar</a> |
                                 <a href="deletarDisciplina.php?id=<?php echo $index; ?>" onclick="return confirm('Tem certeza que deseja deletar essa disciplina?')">Deletar</a>
@@ -59,7 +63,7 @@ if (file_exists("disciplinas.txt")) {
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="4">Nenhuma disciplina cadastrada</td>
+                        <td colspan="6">Nenhum aluno cadastrado.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
