@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="criarDisciplina.php">Criar Disciplinas</a></li>
-                <li><a href="listarDisciplinas.php">Listar Disciplinas</a></li>
-                <li><a href="buscarDisciplina.php">Buscar Disciplina</a></li>
+                <li><a href="cadastrarAluno.php">Cadastrar Aluno</a></li>
+                <li><a href="listarAlunos.php">Lista de Alunos</a></li>
+                <li><a href="buscarAluno.php">Busca de Aluno</a></li>
             </ul>
         </nav>
     </header>
