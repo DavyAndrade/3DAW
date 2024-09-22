@@ -34,7 +34,7 @@ if (file_exists("alunos.txt")) {
     </header>
 
     <main>
-        <h2>Lista de Disciplinas</h2>
+        <h2>Lista de Alunos</h2>
         <table>
             <thead>
                 <tr>
@@ -43,7 +43,6 @@ if (file_exists("alunos.txt")) {
                     <th>Data de Nascimento</th>
                     <th>Matricula</th>
                     <th>Ano de Ingresso</th>
-                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
