@@ -2,13 +2,13 @@
 $msg = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST["nome"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
     $arqUsers = fopen("users.txt", "a") or die("erro ao criar arquivo");
 
-    $linha = $nome . ";" . $email . ";" . $senha . "\n";
+    $linha = $username . ";" . $email . ";" . $senha . "\n";
 
     fwrite($arqUsers, $linha);
     fclose($arqUsers);
@@ -39,11 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <main>
         <h1>Cadastro de Usuário</h1>
         <form action="cadastrarUsuario.php" method="POST">
-            Nome: <input type="text" name="nome" placeholder="Nome">
-                <br><br>
-            Email: <input type="email" name="email" placeholder="Email">
+            <label for="username">Nome: </label>
+            <input type="text" name="username" placeholder="Nome" required>
             <br><br>
-            Senha: <input type="password" name="senha" placeholder="Senha">
+            <label for="email">Email: </label>
+            <input type="email" name="email" placeholder="Email" required>
+            <br><br>
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" placeholder="Senha" required>
             <br><br>
             <input type="submit" value="Cadastrar Usuário">
         </form>

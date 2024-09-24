@@ -42,27 +42,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Criar Questionário</h1>
         <form action="criarQuestionario.php" method="POST">
             <div>
-                Questão: <input type="text" name="pergunta" placeholder="Escreva a Questão">
+                Questão: <input type="text" name="pergunta" placeholder="Escreva a Questão" required>
             </div>
             <br><br>
             <div>
-                Alternativa A: <input type="text" name="a" placeholder="Alternativa A">
+                Alternativa A: <input type="text" name="a" placeholder="Alternativa A" required>
             </div>
             <br><br>
             <div>
-                Alternativa B: <input type="text" name="b" placeholder="Alternativa B">
+                Alternativa B: <input type="text" name="b" placeholder="Alternativa B" required>
             </div>
             <br><br>
             <div>
-                Alternativa C: <input type="text" name="c" placeholder="Alternativa C">
+                Alternativa C: <input type="text" name="c" placeholder="Alternativa C" required>
             </div>
             <br><br>
             <div>
-                Alternativa D: <input type="text" name="d" placeholder="Alternativa D">
+                Alternativa D: <input type="text" name="d" placeholder="Alternativa D" required>
             </div>
             <br><br>
             <div>
-                Resposta Correta: <input type="text" name="gabarito" placeholder="Resposta Correta">
+                Resposta Correta: <input type="text" name="gabarito" placeholder="Resposta Correta" required>
             </div>
             <br><br>
             <input type="submit" value="Criar Questão">
