@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-a {
+nav a {
   text-decoration: none;
   color: black;
 }
@@ -28,8 +28,23 @@ li {
   font-weight: bold;
 }
 
-h1, p {
-  color: white !important;
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  margin-top: 5rem;
+  color: white;
+  margin-top: 4rem;
+}
+
+main a {
+  background-color: rgba(0, 255, 255, 0.623);
+  margin-top: 1.5rem;
+  margin-left: 30rem;
+  margin-right: 30rem;
+  color: white;
+  text-decoration: none;
+  border: 1px white;
+  border-radius: 1rem;
+  padding: 1rem;
 }
