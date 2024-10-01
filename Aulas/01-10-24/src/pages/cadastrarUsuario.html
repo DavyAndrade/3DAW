@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="../style/cadastrarUsuario.css">
+    <script src="../script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastrarUsuario.html">Cadastrar Usuário</a></li>
+                <li><a href="criarQuestionario.php">Criar Questão</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Cadastro de Usuário</h1>
+        <form action="" method="POST" id="formUser">
+            <label for="username">Nome: </label>
+            <input type="text" name="username" id="username" placeholder="Nome" required>
+            <br><br>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <br><br>
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" id="senha" placeholder="Senha" required>
+            <br><br>
+            <input type="button" value="Cadastrar Usuário" onclick="createUser()">
+        </form>
+        <p id="msg"></p>
+        <br>
+    </main>
+</body>
+
+</html>
