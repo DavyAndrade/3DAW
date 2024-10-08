@@ -3,26 +3,47 @@ function createUser() {
   let email = document.getElementById("email").value;
   let senha = document.getElementById("senha").value;
 
-  let objForm = { username: username, email: email, senha: senha };
-  console.log("Dados do Usuário: ", objForm);
+  let objForm = new FormData();
+  objForm.append("username", username);
+  objForm.append("email", email);
+  objForm.append("senha", senha);
 
-  fetch(
-    "http://localhost/3DAW-Davy/Atividades/Atividade%20AV1/src/php/cadastrarUsuario.php",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(objForm),
+  let xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("msg").innerHTML = this.responseText;
     }
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Resposta do Servidor: ", data);
-      document.getElementById("msg").innerHTML = data.message; // Exibe a mensagem de retorno
-    })
-    .catch((error) => {
-      console.error("Erro:", error);
-      document.getElementById("msg").innerHTML = "Erro ao cadastrar usuário.";
-    });
+  };
+
+  xmlhttp.open("POST", "../php/cadastrarUsuario.php", true);
+  xmlhttp.send(objForm);
+}
+
+function createAsk() {
+  let pergunta = document.getElementById("pergunta").value;
+  let a = document.getElementById("a").value;
+  let b = document.getElementById("b").value;
+  let c = document.getElementById("c").value;
+  let d = document.getElementById("d").value;
+  let gabarito = document.getElementById("gabarito").value;
+
+  let objForm = new FormData();
+  objForm.append("pergunta", pergunta);
+  objForm.append("a", a);
+  objForm.append("b", b);
+  objForm.append("c", c);
+  objForm.append("d", d);
+  objForm.append("gabarito", gabarito);
+
+  let xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("msg").innerHTML = this.responseText;
+    }
+  };
+
+  xmlhttp.open("POST", "../php/criarQuestionario.php", true);
+  xmlhttp.send(objForm);
 }

@@ -1,19 +1,28 @@
 <?php
-header('Content-Type: application/json'); // Define o tipo de conteúdo para JSON
+$msg = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $data = json_decode(file_get_contents("php://input"), true); // Lê o JSON do corpo da requisição
-    $username = $data["username"];
-    $email = $data["email"];
-    $senha = $data["senha"];
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
 
-    $arqUsers = fopen("users.txt", "a") or die("erro ao criar arquivo");
+    // Verificando se todos os campos foram preenchidos
+    if (empty($username) || empty($email) || empty($senha)) {
+        echo "Todos os campos devem ser preenchidos.";
+        exit;
+    }
 
+    // Caminho para o arquivo
+    $arqUsers = fopen("../data/users.txt", "a") or die("Erro ao abrir o arquivo");
+
+    // Formatando a linha para ser escrita no arquivo
     $linha = $username . ";" . $email . ";" . $senha . "\n";
+
+    // Escrevendo a linha no arquivo
     fwrite($arqUsers, $linha);
     fclose($arqUsers);
 
-    echo json_encode(["status" => "success", "message" => "Usuário cadastrado com sucesso!"]);
+    echo "Usuário cadastrado com sucesso!";
 } else {
-    echo json_encode(["status" => "error", "message" => "Método não permitido."]);
+    echo "Método de requisição inválido.";
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Questão</title>
     <link rel="stylesheet" href="../style/criarQuestionario.css">
+    <script src="../script/script.js"></script>
 </head>
 
 <body>
@@ -21,33 +22,40 @@
 
     <main>
         <h1>Criar Questionário</h1>
-        <form action="criarQuestionario.php" method="POST">
+        <form action="" method="POST">
             <div>
-                Questão: <input type="text" name="pergunta" placeholder="Escreva a Questão" required>
+                <label for="pergunta">Questão: </label>
+                <input type="text" name="pergunta" id="pergunta" placeholder="Escreva a Questão" required>
             </div>
             <br><br>
             <div>
-                Alternativa A: <input type="text" name="a" placeholder="Alternativa A" required>
+                <label for="a">Alternativa A: </label>
+                <input type="text" name="a" id="a" placeholder="Alternativa A" required>
             </div>
             <br><br>
             <div>
-                Alternativa B: <input type="text" name="b" placeholder="Alternativa B" required>
+                <label for="b">Alternativa B: </label>
+                <input type="text" name="b" id="b" placeholder="Alternativa B" required>
             </div>
             <br><br>
             <div>
-                Alternativa C: <input type="text" name="c" placeholder="Alternativa C" required>
+                <label for="c">Alternativa C</label>
+                <input type="text" name="c" id="c" placeholder="Alternativa C" required>
             </div>
             <br><br>
             <div>
-                Alternativa D: <input type="text" name="d" placeholder="Alternativa D" required>
+                <label for="d">Alternativa D: </label>
+                <input type="text" name="d" id="d" placeholder="Alternativa D" required>
             </div>
             <br><br>
             <div>
-                Resposta Correta: <input type="text" name="gabarito" placeholder="Resposta Correta" required>
+                <label for="gabarito">Resposta Correta: </label>
+                <input type="text" name="gabarito" id="gabarito" placeholder="Resposta Correta" required>
             </div>
             <br><br>
-            <input type="submit" value="Criar Questão">
+            <input type="button" value="Criar Questionário" onclick="createAsk()">
         </form>
+        <p id="msg"></p>
     </main>
 </body>
 

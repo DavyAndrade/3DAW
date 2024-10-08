@@ -19,7 +19,7 @@ ul {
   list-style-type: none;
 }
 
-input[type="submit"] {
+input[type="button"] {
   background-color: #4a90e2;
   border: none;
   border-radius: 10px;
