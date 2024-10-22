@@ -1,14 +1,37 @@
 <?php
+$servidor = "localhost";
+$username = "root";
+$senha = "";
+$database = "teste";
 
+// Criando a conexão com o banco de dados
+$conn = new mysqli($servidor, $username, $senha, $database);
+
+// Verificando a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+// Recebendo os dados do formulário e validando-os
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    // Formatando a linha para ser escrita no arquivo
-    $linha = $username . ";" . $email . ";" . $senha . "\n";
+    // Validando os campos
+    $comandoSQL = $conn->prepare("INSERT INTO `usuarios` (username, email, senha) VALUES (?, ?, ?)");
 
-    echo "Usuário cadastrado com sucesso!";
-} else {
-    echo "Método de requisição inválido.";
+    // Definindo os tipos dos dados
+    $comandoSQL->bind_param("sss", $username, $email, $senha);
+
+    // Executando o comando SQL
+    if ($comandoSQL->execute()) {
+        echo "Usuário cadastrado com sucesso!";
+    } else {
+        echo "Erro: " . $conn->error;
+    }
+
+    // Fechando os recursos da conexão
+    $comandoSQL->close();
+    $conn->close();
 }

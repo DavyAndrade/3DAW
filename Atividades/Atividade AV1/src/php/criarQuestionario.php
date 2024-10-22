@@ -1,5 +1,18 @@
 <?php
+$servidor = "localhost";
+$username = "root";
+$senha = "";
+$database = "teste";
 
+// Criando a conexão com o banco de dados
+$conn = new mysqli($servidor, $username, $senha, $database);
+
+// Verificando a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+// Recebe os dados do formulário
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pergunta = $_POST["pergunta"];
     $a = $_POST["a"];
@@ -8,19 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $d = $_POST["d"];
     $gabarito = $_POST["gabarito"];
 
-    $servidor = "localhost";
-    $username = "root";
-    $senha = "";
-    $database = "Teste";
+    // Validando os campos
+    $comandoSQL = $conn->prepare("INSERT INTO `perguntas` (pergunta, a, b, c, d, gabarito) VALUES (?, ?, ?, ?, ?, ?)");
 
-    $conn = new mysqli($servidor, $username, $senha, $database);
+    // Definindo os tipos dos dados
+    $comandoSQL->bind_param("ssssss", $pergunta, $a, $b, $c, $d, $gabarito);
 
-    if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
+    // Executando o comando SQL
+    if ($comandoSQL->execute()) {
+        echo "Pergunta cadastrada com sucesso!";
+    } else {
+        echo "Erro: " . $conn->error;
     }
 
-    $comando = "INSERT pergunta, a, b, c, d, gabarito VALUES ('{$pergunta}', '{$a}', '{$b}', '{$c}', '{$d}', '{$gabarito}')";
-
-    // Formatando a linha para escrita no arquivo
-    $linha = "{$pergunta};{$a};{$b};{$c};{$d};{$gabarito}\n";
+    // Fechando os recursos da conexão
+    $comandoSQL->close();
+    $conn->close();
 }
