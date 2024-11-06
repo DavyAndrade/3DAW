@@ -1,11 +1,11 @@
 <?php
 $servidor = "localhost";
-$username = "root";
+$usuario = "root";
 $senha = "";
-$database = "teste";
+$banco = "teste";
 
 // Criando a conexão com o banco de dados
-$conn = new mysqli($servidor, $username, $senha, $database);
+$conn = new mysqli($servidor, $usuario, $senha, $banco);
 
 // Verificando a conexão
 if ($conn->connect_error) {
