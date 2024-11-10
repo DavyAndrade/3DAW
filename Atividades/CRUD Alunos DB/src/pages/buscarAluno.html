@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Alunos</title>
+    <link rel="stylesheet" href="../style/buscarAluno.css">
+    <script src="../script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastrarAluno.html">Cadastrar Aluno</a></li>
+                <li><a href="listarAlunos.html">Lista de Alunos</a></li>
+                <li><a href="buscarAluno.html">Buscar Aluno</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Lista de Alunos</h1>
+
+        <input type="text" id="campoBusca" placeholder="Pesquisar por Nome, CPF ou Matrícula">
+        <input type="button" value="Buscar Aluno" onclick="buscarAluno()">
+
+        <div id="alunos-lista"></div>
+    </main>
+</body>
+
+</html>
