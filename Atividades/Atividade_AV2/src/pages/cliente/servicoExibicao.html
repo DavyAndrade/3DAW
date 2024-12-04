@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Nail Design</title>
+    <link rel="stylesheet" href="../../style/default.css">
+    <link rel="stylesheet" href="../../style/exibirServicosTemplate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <!--Imagem-->
+            <img src="../../imgs/logo.png" alt="Logo da Clínica de Estética Rosângela">
+        </div>
+
+    </header>
+    <!-- Navbar -->
+    <nav>
+
+        <div class="nav-items-container">
+
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="servicos.html" class="nav-item active">Serviços</a>
+            <a href="./Pacotes/pacotes.html" class="nav-item">Pacotes</a>
+            <a href="login.html" class="logout nav-item">Logout</a>
+        </div>
+
+        <!--script para mostrar a página ativa na nav bar-->
+        <script src="../../script/navbarScript.js"></script>
+
+
+    </nav>
+
+    <!-- barra de cima -->
+    <div class="top-bar" style="padding:  20px;">
+        <h1>Nail Design</h1>
+
+        <div id="searchBar-container">
+            <input type="text" id="searchBar" placeholder="Buscar...">
+            <button id="searchBtn">🔍</button>
+        </div>
+    </div>
+
+    <main>
+
+        <div class="centralizar">
+
+            <div class="back-btn-container">
+                <button class="back-button" onclick="window.history.back();">&#8617;</button>
+                <h4>Voltar</h4>
+            </div>
+
+            <!-- Conteudo -->
+            <section class="content">
+
+
+                <div class="left-column">
+                    <div class="service-card">
+                        <h2>Marilda</h2>
+                        <div class="container">
+                            <div style="width: 50%;">
+                                <p>Pé e Mão</p>
+                                <p>Unhas Postiças</p>
+                            </div>
+                            <hr>
+                            <div style="width: 50%;">
+                                <p>Horários:</p>
+                                <p>13h às 17h</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="window.location.href='./Pacotes/criarPacotes.html'">Adicionar Pacote</button>
+                            <button onclick="window.location.href='./agendamento.html'">Agendar</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <h2>Dona Baratinha</h2>
+                        <div class="container">
+                            <div style="width: 50%;">
+                                <p>Pé e Mão</p>
+                                <p>Unhas Postiças</p>
+                            </div>
+                            <hr>
+                            <div style="width: 50%;">
+                                <p>Horários:</p>
+                                <p>13h às 17h</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>Adicionar Pacote</button>
+                            <button onclick="window.location.href='./agendamento.html'">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <h2>Serviços de Nail Design</h2>
+                    <ul>
+                        <li>Pé e Mão: R$XX,XX<br> Duração: 1hr e 10min</li>
+                        <li>Apenas Mão: R$XX,XX<br> Duração: 30 min</li>
+                        <li>Apenas Pé: R$XX,XX<br> Duração: 40 min</li>
+                        <li>Unhas Postiças: R$XX,XX<br> Duração: 30 min</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+
+</html>
